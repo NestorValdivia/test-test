@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Neoverum — Sumas y Restas</title>
+
+    <link rel="stylesheet" href="./src/css/base.css" />
+    <link rel="stylesheet" href="./src/css/layout.css" />
+    <link rel="stylesheet" href="./src/css/components.css" />
+    <link rel="stylesheet" href="./src/css/pages/sumas-restas.css" />
+  </head>
+  <body>
+    <main class="screen-center">
+      <div class="ops-wrap">
+        <!-- MENÚ -->
+        <section id="menu-view">
+          <h1 class="ops-title">Operaciones</h1>
+          <nav class="ops-menu">
+            <button id="op-suma-0-9" class="btn">Sumas de 0 a 9</button>
+          </nav>
+        </section>
+
+        <!-- SUMAS 0–9 -->
+        <section id="view-suma-0-9" class="hidden">
+          <h1 class="ops-title">Sumas 0–9</h1>
+
+          <!-- Lienzo superior con dos grupos de círculos -->
+          <div id="scene" class="scene" role="img"
+               aria-label="Círculos de colores representando dos grupos para una suma">
+            <!-- Contadores dentro del lienzo -->
+            <div id="count-left" class="count-badge count-left">0</div>
+            <div id="count-right" class="count-badge count-right">0</div>
+            <div id="big-plus" class="big-plus" aria-hidden="true">+</div>
+          </div>
+
+          <!-- Panel inferior (operación y controles) -->
+          <div class="panel">
+            <div class="panel-top">
+              <span id="lesson-label" class="lesson-label">Ejercicio 1/5 (Ejemplo)</span>
+            </div>
+
+            <div class="operation">
+              <span id="op-a">0</span>
+              <span class="op-symbol">+</span>
+              <span id="op-b">0</span>
+              <span class="op-symbol">=</span>
+              <input id="answer" type="number" inputmode="numeric" placeholder="?"
+                     min="0" max="18" step="1" />
+              <span id="result-big" class="result-big hidden" aria-live="polite"></span>
+            </div>
+            
+
+            <div class="panel-actions">
+              <button id="btn-skip-example" class="btn">Omitir ejemplo</button>
+              <button id="btn-check" class="btn">Comprobar</button>
+              <button id="btn-next" class="btn">Siguiente</button>
+              <button id="btn-menu" class="btn">Volver al menú</button>
+              <button id="btn-example-toggle" class="btn panel-action">Ver ejemplo</button>
+            </div>
+
+            <div id="msg" class="msg" aria-live="polite"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="./src/js/app.js" defer></script>
+    <script src="./src/js/pages/sumas-restas.js" defer></script>
+  </body>
+</html>
